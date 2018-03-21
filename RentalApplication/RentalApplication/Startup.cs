@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RentalApplication.Models.Database;
+using RentalApplication.Models.Interfaces;
+using RentalApplication.Models.Repositories;
 
 namespace RentalApplication
 {
@@ -23,6 +27,13 @@ namespace RentalApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // Connection
+            var dbConnectionString = @"Server=(localdb)\mssqllocaldb;Database=RentalApplicationDB;Trusted_Connection=true";
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
+
+            // Container
+            services.AddScoped<IPropertyRepository, PropertyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
