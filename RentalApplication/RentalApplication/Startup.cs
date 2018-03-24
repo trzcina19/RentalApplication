@@ -32,8 +32,10 @@ namespace RentalApplication
             var dbConnectionString = @"Server=(localdb)\mssqllocaldb;Database=RentalApplicationDB;Trusted_Connection=true";
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
 
-            // Container
+
             services.AddScoped<IPropertyRepository, PropertyRepository>();
+            services.AddScoped<IOwnerRepository, OwnerRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

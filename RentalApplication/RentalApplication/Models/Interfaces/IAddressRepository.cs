@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RentalApplication.Models.Interfaces
 {
-    interface IAddressRepository
+   public interface IAddressRepository
     {
         int AddAddress(Address address);
         Address GetAddress(int addressId);

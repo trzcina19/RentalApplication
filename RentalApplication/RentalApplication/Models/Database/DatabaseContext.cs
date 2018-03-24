@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RentalApplication.Models.Database
 {
-    public class DatabaseContext:IdentityDbContext
+    public class DatabaseContext : IdentityDbContext
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
