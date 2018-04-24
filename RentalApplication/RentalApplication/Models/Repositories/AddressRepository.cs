@@ -34,5 +34,22 @@ namespace RentalApplication.Models.Repositories
             return _databaseContext.Addresses.FirstOrDefault(address => address.AddressId == addressId);
         }
 
+        public List<Address> GetAll()
+        {
+            return _databaseContext.Addresses.ToList();
+        }
+
+        public int UpdateAddress(Address address)
+        {
+            if (address == null)
+            {
+                throw new Exception("Object address cannot be null.");
+            }
+
+            _databaseContext.Addresses.Update(address);
+            _databaseContext.SaveChanges();
+            return address.AddressId;
+        }
+
     }
 }

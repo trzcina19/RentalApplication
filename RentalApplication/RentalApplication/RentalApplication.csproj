@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngularJS.Core" Version="1.6.8" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
   </ItemGroup>
@@ -22,23 +23,51 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\properties\properties.component.ts" />
+    <None Remove="ClientApp\app\common\base.component.ts" />
+    <None Remove="ClientApp\app\components\addresses\services\addresses.service.ts" />
+    <None Remove="ClientApp\app\components\owners\new-owner.component.ts" />
+    <None Remove="ClientApp\app\components\owners\owners.component.ts" />
+    <None Remove="ClientApp\app\components\owners\services\owners.service.ts" />
     <None Remove="ClientApp\app\components\properties\services\properties.service.ts" />
+    <None Remove="ClientApp\app\components\reports\reports.component.ts" />
+    <None Remove="ClientApp\app\components\reports\services\reports.service.ts" />
+    <None Remove="ClientApp\app\models\address.ts" />
+    <None Remove="ClientApp\app\models\owner.ts" />
     <None Remove="ClientApp\app\models\property.ts" />
+    <None Remove="ClientApp\app\models\report.ts" />
+    <None Remove="ClientApp\app\services\addresses-backend.service.ts" />
+    <None Remove="ClientApp\app\services\http-addresses-backend.service.ts" />
+    <None Remove="ClientApp\app\services\http-owners-backend.service.ts" />
     <None Remove="ClientApp\app\services\http-properties-backend.service.ts" />
+    <None Remove="ClientApp\app\services\http-reports-backend.service.ts" />
+    <None Remove="ClientApp\app\services\owners-backend.service.ts" />
     <None Remove="ClientApp\app\services\properties-backend.service.ts" />
+    <None Remove="ClientApp\app\services\reports-backend.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\common\base.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\addresses\services\addresses.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\new-owner.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\owners.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\services\owners.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\properties\properties.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\properties\property-details.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\properties\services\properties.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\reports\reports.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\reports\services\reports.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\address.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\owner.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\property.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\report.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\addresses-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\http-addresses-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\http-owners-backend.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\http-properties-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\http-reports-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\owners-backend.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\properties-backend.service.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\app\components\properties\components\" />
+    <TypeScriptCompile Include="ClientApp\app\services\reports-backend.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

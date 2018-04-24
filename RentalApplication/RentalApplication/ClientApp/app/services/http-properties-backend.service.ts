@@ -1,37 +1,25 @@
 ﻿import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Property } from '../models/property';
-import { PropertiesBackendService } from '../services/properties-backend.service';
+import { PropertiesBackendService } from '../services/properties-backend.service'
 import { Http, RequestOptions, Headers, Response } from '@angular/http';
-import { Request } from '@angular/http/src/static_request';
-import { JSONPBackend_ } from '@angular/http/src/backends/jsonp_backend';
 
 @Injectable()
-
 export class HttpPropertiesBackendService extends PropertiesBackendService {
-   
     private addPropertyUrl: string = "api/property/addproperty";
-
     private getPropertyUrl: string = "api/property/getproperty?propertyId=";
-
     private getPropertiesUrl: string = "api/property/getproperties";
-
     private updatePropertyUrl: string = "api/property/updateproperty";
-
-    private deletePropertyUrl: string = "api/property/deleteproperty?propertyId=";
-
+    private deletePropertyUrl: string = "api/property/deleteproperty?propertyId="
 
     private jsonContentOptions: RequestOptions;
     constructor(private http: Http) {
         super();
         let headersJson: Headers = new Headers({
-            'Content-Type':'application/json'
-        })
+            'Content-Type': 'application/json',
+        });
         this.jsonContentOptions = new RequestOptions({ headers: headersJson })
     }
-
-
-
 
     addProperty(newProperty: Property): Observable<number> {
         return this.http.post(this.addPropertyUrl, JSON.stringify(newProperty), this.jsonContentOptions).

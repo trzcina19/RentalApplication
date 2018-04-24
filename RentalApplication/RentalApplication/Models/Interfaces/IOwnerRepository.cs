@@ -9,6 +9,8 @@ namespace RentalApplication.Models.Interfaces
     {
         int AddOwner(Owner owner);
         Owner GetOwner(int ownerId);
+        int UpdateOwner(Owner owner);
+        List<Owner> GetAll();
 
     }
 }

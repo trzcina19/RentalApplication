@@ -1,4 +1,4 @@
-<div class='main-nav'>
+﻿<div class='main-nav'>
     <div class='navbar navbar-inverse'>
         <div class='navbar-header'>
             <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
@@ -13,23 +13,35 @@
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-home'></span> Home
+                    <a [routerLink]="['/properties/new-property']">
+                        <span class='glyphicon glyphicon-th-list'></span> Dodaj nieruchomość
                     </a>
                 </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/counter']">
-                        <span class='glyphicon glyphicon-education'></span> Counter
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/fetch-data']">
-                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
                     <a [routerLink]="['/properties']">
-                        <span class='glyphicon glyphicon-th-list'></span> Properties data
+                        <span class='glyphicon glyphicon-th-list'></span> Lista nieruchomości
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/owners']">
+                        <span class='glyphicon glyphicon-th-list'></span> Lista właścicieli
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/addresses']">
+                        <span class='glyphicon glyphicon-th-list'></span> Lista adresów
+                    </a>
+                </li>
+
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/reports/types-report']">
+                        <span class='glyphicon glyphicon-th-list'></span> Wykres kołowy
+                    </a>
+                </li>
+
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/reports/properties-report']">
+                        <span class='glyphicon glyphicon-th-list'></span> Wykres słupkowy
                     </a>
                 </li>
             </ul>

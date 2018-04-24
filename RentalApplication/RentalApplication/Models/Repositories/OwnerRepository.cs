@@ -30,5 +30,23 @@ namespace RentalApplication.Models.Repositories
             if (ownerId <= 0) throw new Exception("Id cannot be less than 0.");
             return _databaseContext.Owners.FirstOrDefault(owner => owner.OwnerId == ownerId);
         }
+
+
+        public List<Owner> GetAll()
+        {
+            return _databaseContext.Owners.ToList();
+        }
+
+        public int UpdateOwner(Owner owner)
+        {
+            if (owner == null)
+            {
+                throw new Exception("Object owner cannot be null.");
+            }
+
+            _databaseContext.Owners.Update(owner);
+            _databaseContext.SaveChanges();
+            return owner.OwnerId;
+        }
     }
 }

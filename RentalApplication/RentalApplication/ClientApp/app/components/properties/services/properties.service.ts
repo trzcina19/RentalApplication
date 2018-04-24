@@ -18,8 +18,8 @@ export class PropertiesService {
     getProperties(): Observable<Property[]> {
         return this.propertiesBackendService.getProperties();
     }
-    updateProperty(updatedProperty: Property): Observable<Property> {
-        return this.updateProperty(updatedProperty);
+    updateProperty(updatedProperty: Property): Observable<number> {
+        return this.propertiesBackendService.updateProperty(updatedProperty);
     }
     deleteProperty(propertyId: number): Observable<number> {
         return this.propertiesBackendService.deleteProperty(propertyId);

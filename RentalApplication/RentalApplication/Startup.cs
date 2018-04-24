@@ -36,6 +36,10 @@ namespace RentalApplication
             services.AddScoped<IPropertyRepository, PropertyRepository>();
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
+
+            services.AddScoped<IReportRepository, ReportRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

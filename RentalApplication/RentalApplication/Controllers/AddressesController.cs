@@ -31,5 +31,34 @@ namespace RentalApplication.Controllers
             _addressRepository.AddAddress(address);
             return new JsonResult(address.AddressId);
         }
+
+        [HttpGet("[action]")]
+        public IActionResult GetAddresses()
+        {
+            return new JsonResult(_addressRepository.GetAll());
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult UpdateAddress([FromBody] Address address)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _addressRepository.UpdateAddress(address);
+            return new JsonResult(address.AddressId);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetAddress(int addressId)
+        {
+            if (addressId <= 0)
+            {
+                return BadRequest("Incorrect address id.");
+            }
+
+            return new JsonResult(_addressRepository.GetAddress(addressId));
+        }
     }
 }
